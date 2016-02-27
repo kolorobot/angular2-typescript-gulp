@@ -1,0 +1,38 @@
+{
+  "name": "angular2-typescript-gulp",
+  "version": "1.0.0",
+  "description": "Angular2 with TypeScript and Gulp QuickStart",
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "server": "lite-server",
+    "postinstall": "typings install"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Rafał Borowiec",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "dependencies": {
+    "angular2": "2.0.0-beta.7",
+    "systemjs": "0.19.22",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.12.0",
+    "del": "^2.2.0",
+    "lite-server": "^2.1.0",
+    "typescript": "^1.8.2",
+    "typings": "^0.6.8"
+  }
+}
