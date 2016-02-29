@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/kolorobot/angular2-typescript-gulp.git"
   },
   "author": "Rafał Borowiec",
   "license": "MIT",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/kolorobot/angular2-typescript-gulp/issues"
   },
   "dependencies": {
     "angular2": "2.0.0-beta.7",

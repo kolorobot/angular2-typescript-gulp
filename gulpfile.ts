@@ -4,10 +4,16 @@ var tsc = require("gulp-typescript");
 var sourcemaps  = require('gulp-sourcemaps');
 var tsProject = tsc.createProject("tsconfig.json");
 
+/**
+ * Remove build directory.
+ */
 gulp.task('clean', (cb) => {
     return del(["build"], cb);
 });
 
+/**
+ * Compile TypeScript sources and create sourcemaps in build directory.
+ */
 gulp.task("compile", () => {
     var tsResult = gulp.src("src/**/*.ts")
         .pipe(sourcemaps.init())
@@ -17,11 +23,17 @@ gulp.task("compile", () => {
         .pipe(gulp.dest("build"));
 });
 
+/**
+ * Copy all resources that are not TypeScript files into build directory.
+ */
 gulp.task("resources", () => {
     return gulp.src(["src/**/*", "!**/*.ts"])
         .pipe(gulp.dest("build"))
 });
 
+/**
+ * Copy all required libraries into build directory.
+ */
 gulp.task("libs", () => {
     return gulp.src([
             'es6-shim/es6-shim.min.js',
@@ -31,10 +43,13 @@ gulp.task("libs", () => {
             'rxjs/bundles/Rx.js',
             'angular2/bundles/angular2.dev.js',
             'angular2/bundles/router.dev.js'
-        ], {cwd: "node_modules/**"}) /* Glog required here. */
+        ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });
 
+/**
+ * Build the project.
+ */
 gulp.task("build", ['compile', 'resources', 'libs'], () => {
     console.log("Building the project ...")
 });
