@@ -4,6 +4,7 @@
   "description": "Angular2 with TypeScript and Gulp QuickStart",
   "scripts": {
     "clean": "gulp clean",
+    "compile": "gulp compile",
     "build": "gulp build",
     "server": "lite-server",
     "postinstall": "typings install"
@@ -28,9 +29,10 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^2.12.0",
     "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.12.0",
     "lite-server": "^2.1.0",
     "typescript": "^1.8.2",
     "typings": "^0.6.8"

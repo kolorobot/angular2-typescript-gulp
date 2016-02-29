@@ -1,6 +1,7 @@
 var gulp = require("gulp");
 var del = require("del");
 var tsc = require("gulp-typescript");
+var sourcemaps  = require('gulp-sourcemaps');
 var tsProject = tsc.createProject("tsconfig.json");
 
 gulp.task('clean', (cb) => {
@@ -9,8 +10,11 @@ gulp.task('clean', (cb) => {
 
 gulp.task("compile", () => {
     var tsResult = gulp.src("src/**/*.ts")
+        .pipe(sourcemaps.init())
         .pipe(tsc(tsProject));
-    return tsResult.js.pipe(gulp.dest("build"));
+    return tsResult.js
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest("build"));
 });
 
 gulp.task("resources", () => {
