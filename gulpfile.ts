@@ -17,7 +17,7 @@ gulp.task('clean', (cb) => {
 /**
  * Lint all custom TypeScript files.
  */
-gulp.task('tslint', function () {
+gulp.task('tslint', () => {
     return gulp.src("src/**/*.ts")
         .pipe(tslint())
         .pipe(tslint.report('prose'));

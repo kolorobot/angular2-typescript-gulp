@@ -11,10 +11,10 @@ import {EventEmitter} from "angular2/core";
 })
 export class TaskComponent {
     @Input() task:Task;
-    @Output() statusChanged:any = new EventEmitter<any>()
+    @Output() statusChanged:any = new EventEmitter<any>();
 
     toggleDone() {
         this.task.toggleDone();
-        this.statusChanged.emit(null)
+        this.statusChanged.emit(null);
     }
 }
