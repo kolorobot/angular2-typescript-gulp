@@ -1,8 +1,11 @@
-var gulp = require("gulp");
-var del = require("del");
-var tsc = require("gulp-typescript");
-var sourcemaps  = require('gulp-sourcemaps');
-var tsProject = tsc.createProject("tsconfig.json");
+"use strict";
+
+let gulp = require("gulp");
+let del = require("del");
+let tsc = require("gulp-typescript");
+let sourcemaps = require('gulp-sourcemaps');
+let tsProject = tsc.createProject("tsconfig.json");
+let tslint = require('gulp-tslint');
 
 /**
  * Remove build directory.
@@ -12,10 +15,19 @@ gulp.task('clean', (cb) => {
 });
 
 /**
+ * Lint all custom TypeScript files.
+ */
+gulp.task('tslint', () => {
+    return gulp.src("src/**/*.ts")
+        .pipe(tslint())
+        .pipe(tslint.report('prose'));
+});
+
+/**
  * Compile TypeScript sources and create sourcemaps in build directory.
  */
 gulp.task("compile", () => {
-    var tsResult = gulp.src("src/**/*.ts")
+    let tsResult = gulp.src("src/**/*.ts")
         .pipe(sourcemaps.init())
         .pipe(tsc(tsProject));
     return tsResult.js
@@ -28,7 +40,7 @@ gulp.task("compile", () => {
  */
 gulp.task("resources", () => {
     return gulp.src(["src/**/*", "!**/*.ts"])
-        .pipe(gulp.dest("build"))
+        .pipe(gulp.dest("build"));
 });
 
 /**
@@ -51,5 +63,5 @@ gulp.task("libs", () => {
  * Build the project.
  */
 gulp.task("build", ['compile', 'resources', 'libs'], () => {
-    console.log("Building the project ...")
+    console.log("Building the project ...");
 });
