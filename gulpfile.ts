@@ -51,6 +51,7 @@ gulp.task("libs", () => {
             'es6-shim/es6-shim.min.js',
             'systemjs/dist/system-polyfills.js',
             'angular2/bundles/angular2-polyfills.js',
+            'angular2/es6/dev/src/testing/shims_for_IE.js',
             'systemjs/dist/system.src.js',
             'rxjs/bundles/Rx.js',
             'angular2/bundles/angular2.dev.js',
