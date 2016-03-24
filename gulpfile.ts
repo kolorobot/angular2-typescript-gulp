@@ -55,7 +55,8 @@ gulp.task("libs", () => {
             'systemjs/dist/system.src.js',
             'rxjs/bundles/Rx.js',
             'angular2/bundles/angular2.dev.js',
-            'angular2/bundles/router.dev.js'
+            'angular2/bundles/router.dev.js',
+            'jquery/dist/jquery.min.js'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });

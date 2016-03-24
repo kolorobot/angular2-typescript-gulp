@@ -31,7 +31,7 @@
     "no-empty": false,
     "no-eval": true,
     "no-string-literal": false,
-    "no-trailing-whitespace": true,
+    "no-trailing-whitespace": false,
     "no-unused-variable": false,
     "no-unreachable": true,
     "no-use-before-declare": true,

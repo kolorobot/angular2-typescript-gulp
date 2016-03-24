@@ -1,6 +1,16 @@
 export class Task {
 
-    constructor(public name:string, public done:boolean) {
+    public static availableLists:Array<string> = ['finance', 'home', 'work'];
+
+
+    constructor(public name:string,
+                public notes:string,
+                public list:string = 'home',
+                public done:boolean = false) {
+    }
+
+    static newTask():Task {
+        return new Task("", "")
     }
 
     toggleDone() {

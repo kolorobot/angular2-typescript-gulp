@@ -1,14 +1,22 @@
-<h1>Todo tasks ({{todoCount}})</h1>
-<ul>
-    <li *ngFor="#task of tasks" [class.selected]="task == selectedTask">
-        <a href="javascript:void(0)" (click)="select(task)">
-            {{task.name}}
-            <span [ngSwitch]="task.done">
-                <template [ngSwitchWhen]="true">[Done]</template>
-                <template [ngSwitchWhen]="false">[Todo]</template>
-            </span>
-        </a>
-    </li>
-</ul>
-
-<task *ngIf="selectedTask" [task]="selectedTask" (statusChanged)="calculateTodoCount()"></task>
+<div class="page-header">
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>Task List ({{todoCount}})</h1>
+            <p class="lead"></p>
+        </div>
+        <div class="col-sm-8">
+            <div class="list-group">
+                <div class="list-group-item well" *ngFor="#task of tasks">
+                    <div class="row-action-primary">
+                        <i class="material-icons">done</i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary"><i class="material-icons">edit</i></div>
+                        <h4 class="list-group-item-heading">{{task.name}}</h4>
+                        <p class="list-group-item-text">{{task.notes}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

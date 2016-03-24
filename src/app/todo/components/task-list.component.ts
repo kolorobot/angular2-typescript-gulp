@@ -1,15 +1,14 @@
 import {Component} from "angular2/core";
 import {Task} from "../models/task";
 import {OnInit} from "angular2/core";
-import {TaskService} from "../services/task-service";
+import {TaskService} from "../services/task.service";
 import {TaskComponent} from "./task.component";
 
 @Component({
     selector: 'task-list',
     templateUrl: './app/todo/components/task-list.html',
     styleUrls: ['./app/todo/components/task-list.css'],
-    directives: [TaskComponent],
-    providers: [TaskService]
+    directives: [TaskComponent]
 })
 export class TaskListComponent implements OnInit {
 
@@ -24,6 +23,7 @@ export class TaskListComponent implements OnInit {
 
     ngOnInit() {
         console.log("Todo component initialized with " + this.tasks.length + " tasks.");
+        $.material.init();
     }
 
     calculateTodoCount() {
