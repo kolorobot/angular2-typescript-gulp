@@ -1,11 +1,11 @@
 "use strict";
 
-let gulp = require("gulp");
-let del = require("del");
-let tsc = require("gulp-typescript");
-let sourcemaps = require('gulp-sourcemaps');
-let tsProject = tsc.createProject("tsconfig.json");
-let tslint = require('gulp-tslint');
+const gulp = require("gulp");
+const del = require("del");
+const tsc = require("gulp-typescript");
+const sourcemaps = require('gulp-sourcemaps');
+const tsProject = tsc.createProject("tsconfig.json");
+const tslint = require('gulp-tslint');
 
 /**
  * Remove build directory.

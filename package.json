@@ -6,7 +6,7 @@
     "clean": "gulp clean",
     "compile": "gulp compile",
     "build": "gulp build",
-    "server": "concurrent --kill-others \"gulp watch\" \"lite-server\"",
+    "start": "concurrent --kill-others \"gulp watch\" \"lite-server\"",
     "postinstall": "typings install"
   },
   "repository": {
