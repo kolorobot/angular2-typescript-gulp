@@ -1,6 +1,9 @@
 import {Component, OnInit} from "angular2/core";
 import {TaskService} from "../services/task.service";
 import {Task} from "../models/task";
+import {Router, RouteParams} from "angular2/router";
+
+declare var $:any;
 
 @Component({
     selector: 'task-form',
@@ -8,11 +11,20 @@ import {Task} from "../models/task";
 })
 export class TaskFormComponent implements OnInit {
 
-    // must not be null
-    task:Task = Task.newTask();
+    task:Task;
+    isNew:boolean = true;
 
-    constructor(private taskService:TaskService) {
-
+    constructor(private _router:Router,
+                private _routeParams:RouteParams,
+                private _taskService:TaskService) {
+        let id:number = +_routeParams.get("id");
+        if (id > 0) {
+            this.task = Object.assign({}, _taskService.getTask(id));
+            this.isNew = false;
+        } else {
+            this.task = Task.newTask();
+            this.isNew = true;
+        }
     }
 
     ngOnInit():any {
@@ -23,8 +35,16 @@ export class TaskFormComponent implements OnInit {
         return Task.availableLists;
     }
 
-    submit():void {
-        this.taskService.addTask(this.task);
-        this.task = Task.newTask();
+    cancel():void {
+        this.navigateToTaskList();
     }
+
+    submit():void {
+        this._taskService.saveOrUpdate(this.task);
+        this.navigateToTaskList();
+    }
+
+    private navigateToTaskList() {
+        this._router.navigate(['TaskList']);
+    };
 }

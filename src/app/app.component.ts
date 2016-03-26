@@ -14,7 +14,7 @@ declare var $:any;
 @RouteConfig([
     {path: '/tasks', component: TaskListComponent, as: 'TaskList'},
     {path: '/task-form', component: TaskFormComponent, as: 'TaskForm'},
-    {path: '/about', component: AboutComponent, as: 'About'}
+    {path: '/about', component: AboutComponent, as: 'About', useAsDefault: true}
 ])
 export class AppComponent implements OnInit {
     ngOnInit() {

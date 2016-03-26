@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Task 1",
+      "notes": "Some notes on Task 1",
+      "list": "home",
+      "done": false
+    },
+    {
+      "id": 2,
+      "name": "Task 2",
+      "notes": "Some notes on Task 2",
+      "list": "finance",
+      "done": false
+    }
+  ]
+}
