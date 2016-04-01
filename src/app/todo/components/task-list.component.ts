@@ -1,6 +1,5 @@
-import {Component, PipeTransform, Pipe} from "angular2/core";
+import {Component, OnInit} from "angular2/core";
 import {Task} from "../models/task";
-import {OnInit} from "angular2/core";
 import {TaskService} from "../services/task.service";
 import {ROUTER_DIRECTIVES} from "angular2/router";
 
@@ -16,37 +15,37 @@ export class TaskListComponent implements OnInit {
 
     todoCount:number;
     selectedTask:Task;
-    tasks:Array<Task>;
-
     showAll = false;
 
     constructor(private _taskService:TaskService) {
-        this.tasks = _taskService.getTasks();
-        this.calculateTodoCount();
+
     }
 
     ngOnInit() {
-        console.log("Todo component initialized with " + this.tasks.length + " tasks.");
+        this.calculateTodoCount();
         $.material.init();
     }
 
     calculateTodoCount() {
-        this.todoCount = this.tasks.filter(t => !t.done).length;
+        this.todoCount = this.getTasks().filter(t => !t.done).length;
     }
 
     toggleShowAll() {
         this.showAll = !this.showAll;
     }
 
-    filteredTasks():Array<Task> {
+    filteredTasks():Task[] {
         if (this.showAll) {
-            return this.tasks;
+            return this.getTasks();
         }
-        return this.tasks.filter(t => !t.done);
+        return this.getTasks().filter(t => !t.done);
     }
-
 
     select(task:Task) {
         this.selectedTask = task;
     }
+
+    private getTasks() {
+        return this._taskService.getTasks();
+    };
 }

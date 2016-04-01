@@ -1,20 +1,30 @@
 import {Injectable} from "angular2/core";
 import {Task} from "../models/task";
+import {Http, Response} from "angular2/http";
+import {Observable} from "rxjs/Observable";
+
+import "rxjs/Rx";
 
 @Injectable()
 export class TaskService {
 
-    private tasks:Array<Task> = [
-        new Task(1, "Task 1", "Some notes on Task 1"),
-        new Task(2, "Task 2", "Some notes on Task 2"),
-        new Task(3, "Task 3", "Some notes on Task 3"),
-        new Task(4, "Task 4", null),
-        new Task(5, "Task 5", null, 'home', true)
-    ];
+    private tasks:Task[] = [];
 
-    private _nextId:number = this.tasks.length + 1;
+    private _nextId:number;
 
-    getTasks():Array<Task> {
+    constructor(private _http:Http) {
+        this.getTasksInternal()
+            .subscribe(tasks => this.tasks = tasks);
+    }
+    
+    private getTasksInternal():Observable<Task[]> {
+        return this._http
+            .get("./app/todo/models/tasks.json")
+            .do(response => console.log("TaskService " +  response.json))
+            .map((response:Response) => <Task[]>response.json().tasks);
+    }
+
+    getTasks():Task[] {
         return this.tasks;
     }
 

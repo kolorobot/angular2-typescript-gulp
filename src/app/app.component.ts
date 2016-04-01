@@ -17,7 +17,9 @@ declare var $:any;
     {path: '/about', component: AboutComponent, as: 'About', useAsDefault: true}
 ])
 export class AppComponent implements OnInit {
+
     ngOnInit() {
+        console.log("AppComponent initialized");
         $.material.init();
     }
 }
