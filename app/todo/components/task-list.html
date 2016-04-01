@@ -1,0 +1,32 @@
+<div id="fixed-action-button">
+    <a [routerLink]="['TaskForm']" class="btn btn-danger btn-fab"><i class="material-icons">add</i></a>
+</div>
+<div class="page-header">
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>Task List ({{todoCount}})</h1>
+            <p class="lead"></p>
+            <div class="togglebutton">
+                <label>
+                    <input type="checkbox" (click)="toggleShowAll()" [checked]="showAll" /> Toggle Show All
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="list-group">
+                <div class="list-group-item well" *ngFor="#task of filteredTasks()">
+                    <div class="row-action-primary">
+                        <i class="material-icons">done</i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary">
+                            <a [routerLink]="['TaskForm', {id: task.id}]"><i class="material-icons">edit</i></a>
+                        </div>
+                        <h4 class="list-group-item-heading">{{task.name}}</h4>
+                        <p class="list-group-item-text">{{task.notes}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

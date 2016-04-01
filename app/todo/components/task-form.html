@@ -1,0 +1,55 @@
+<div class="page-header">
+    <div class="row">
+        <div class="col-sm-4">
+            <h1>{{isNew ? 'Creating a new task' : 'Editing a task'}}</h1>
+            <p class="lead">Fill in the form and save the task</p>
+        </div>
+        <div class="col-sm-8">
+            <div class="well">
+                <form (ngSubmit)="submit()" #taskForm="ngForm">
+                    <fieldset>
+                        <legend>Task</legend>
+                        <div class="form-group">
+                            <label for="task-name" class="col-md-2 control-label">Name (required)</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="task-name" minlength="3" required [(ngModel)]="task.name" ngControl="name" #name="ngForm">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-notes" class="col-md-2 control-label">Notes</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" rows="3" id="task-notes" [(ngModel)]="task.notes"></textarea>
+                                <span class="help-block">Provide some extra information about the task.</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-list" class="col-md-2 control-label">Select list</label>
+                            <div class="col-md-10">
+                                <select id="task-list" class="form-control" [(ngModel)]="task.list" required>
+                                    <option *ngFor="#list of availableLists()" [value]="list">{{list}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="togglebutton">
+                                    <label>
+                                        <input type="checkbox" [checked]="task.done" [(ngModel)]="task.done"> Done?
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10 col-md-offset-2">
+                                <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
+                                <button type="submit" class="btn btn-primary" [disabled]="!taskForm.form.valid">Submit
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
