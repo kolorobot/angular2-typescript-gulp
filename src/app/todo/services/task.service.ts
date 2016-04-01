@@ -2,7 +2,6 @@ import {Injectable} from "angular2/core";
 import {Task} from "../models/task";
 import {Http, Response} from "angular2/http";
 import {Observable} from "rxjs/Observable";
-
 import "rxjs/Rx";
 
 @Injectable()
@@ -10,17 +9,15 @@ export class TaskService {
 
     private tasks:Task[] = [];
 
-    private _nextId:number;
-
     constructor(private _http:Http) {
         this.getTasksInternal()
             .subscribe(tasks => this.tasks = tasks);
     }
-    
+
     private getTasksInternal():Observable<Task[]> {
         return this._http
             .get("./app/todo/models/tasks.json")
-            .do(response => console.log("TaskService " +  response.json))
+            .do(response => console.log("TaskService " + response.json))
             .map((response:Response) => <Task[]>response.json().tasks);
     }
 
@@ -56,10 +53,7 @@ export class TaskService {
     }
 
     private nextId():number {
-        try {
-            return this._nextId;
-        } finally {
-            this._nextId++;
-        }
+        let max:number = this.tasks.reduce((p, c) => p.id > c.id ? p.id : c.id);
+        return max + 1;
     }
 }
