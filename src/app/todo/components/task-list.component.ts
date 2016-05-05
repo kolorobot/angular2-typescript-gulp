@@ -1,7 +1,9 @@
-import {Component, OnInit} from "angular2/core";
+import {Component} from "@angular/core";
 import {Task} from "../models/task";
-import {TaskService} from "../services/task.service";
-import {ROUTER_DIRECTIVES} from "angular2/router";
+import {OnInit} from "@angular/core";
+import {TaskService} from "../services/task-service";
+import {TaskComponent} from "./task.component";
+import {ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 
 declare var $:any;
 
