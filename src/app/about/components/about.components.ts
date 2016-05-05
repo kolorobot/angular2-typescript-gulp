@@ -1,5 +1,5 @@
-import {Component} from "angular2/core";
-import {OnInit} from "angular2/core";
+import {Component} from "@angular/core";
+import {OnInit} from "@angular/core";
 
 @Component({
     templateUrl: './app/about/components/about.html'

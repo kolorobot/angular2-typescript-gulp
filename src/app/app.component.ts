@@ -1,5 +1,5 @@
-import {Component, OnInit} from "angular2/core";
-import {RouteConfig, RouterLink, ROUTER_DIRECTIVES} from "angular2/router";
+import {Component, OnInit} from "@angular/core";
+import {RouteConfig, RouterLink, ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 
 import {TaskListComponent} from "./todo/components/task-list.component";
 import {AboutComponent} from "./about/components/about.components";
