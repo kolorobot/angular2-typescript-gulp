@@ -7,7 +7,7 @@ import {provide} from "@angular/core";
 import {LocationStrategy, HashLocationStrategy} from "@angular/common";
 import {ROUTER_PROVIDERS} from "@angular/router-deprecated";
 import {TaskService} from "./todo/services/task.service";
-import {HTTP_PROVIDERS} from "angular2/http";
+import {HTTP_PROVIDERS} from "@angular/http";
 
 bootstrap(AppComponent, [
     ROUTER_PROVIDERS,

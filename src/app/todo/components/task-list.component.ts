@@ -1,8 +1,7 @@
 import {Component} from "@angular/core";
 import {Task} from "../models/task";
 import {OnInit} from "@angular/core";
-import {TaskService} from "../services/task-service";
-import {TaskComponent} from "./task.component";
+import {TaskService} from "../services/task.service";
 import {ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 
 declare var $:any;
