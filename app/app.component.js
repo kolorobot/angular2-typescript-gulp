@@ -1,4 +1,4 @@
-System.register(["angular2/core", "angular2/router", "./todo/components/task-list.component", "./about/components/about.components", "./todo/components/task-form.component"], function(exports_1, context_1) {
+System.register(["@angular/core", "@angular/router-deprecated", "./todo/components/task-list.component", "./about/components/about.components", "./todo/components/task-form.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,15 @@ System.register(["angular2/core", "angular2/router", "./todo/components/task-lis
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, task_list_component_1, about_components_1, task_form_component_1;
+    var core_1, router_deprecated_1, task_list_component_1, about_components_1, task_form_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
+            function (router_deprecated_1_1) {
+                router_deprecated_1 = router_deprecated_1_1;
             },
             function (task_list_component_1_1) {
                 task_list_component_1 = task_list_component_1_1;
@@ -41,9 +41,9 @@ System.register(["angular2/core", "angular2/router", "./todo/components/task-lis
                     core_1.Component({
                         selector: "app",
                         templateUrl: "./app/app.html",
-                        directives: [task_list_component_1.TaskListComponent, about_components_1.AboutComponent, router_1.RouterLink, router_1.ROUTER_DIRECTIVES]
+                        directives: [task_list_component_1.TaskListComponent, about_components_1.AboutComponent, router_deprecated_1.RouterLink, router_deprecated_1.ROUTER_DIRECTIVES]
                     }),
-                    router_1.RouteConfig([
+                    router_deprecated_1.RouteConfig([
                         { path: '/tasks', component: task_list_component_1.TaskListComponent, as: 'TaskList' },
                         { path: '/task-form', component: task_form_component_1.TaskFormComponent, as: 'TaskForm' },
                         { path: '/about', component: about_components_1.AboutComponent, as: 'About', useAsDefault: true }

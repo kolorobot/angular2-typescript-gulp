@@ -1,0 +1,1 @@
+{"version":3,"file":"partition.js","sourceRoot":"","sources":["../../../../../../lib/rxjs/src/operator/partition.ts"],"names":[],"mappings":";;;;IAIA;;;;;;OAMG;IACH,mBAA6B,SAAgC,EAAE,OAAa;QAC1E,MAAM,CAAC;YACL,eAAM,CAAC,IAAI,CAAC,IAAI,EAAE,SAAS,CAAC;YAC5B,eAAM,CAAC,IAAI,CAAC,IAAI,EAAE,SAAG,CAAC,SAAS,EAAE,OAAO,CAAC,CAAC;SAC3C,CAAC;IACJ,CAAC;IALD,iCAKC,CAAA"}

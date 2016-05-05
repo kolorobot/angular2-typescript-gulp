@@ -1,4 +1,4 @@
-System.register(["angular2/core", "../services/task.service", "angular2/router"], function(exports_1, context_1) {
+System.register(["@angular/core", "../services/task.service", "@angular/router-deprecated"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "../services/task.service", "angular2/router"]
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, task_service_1, router_1;
+    var core_1, task_service_1, router_deprecated_1;
     var TaskListComponent;
     return {
         setters:[
@@ -20,8 +20,8 @@ System.register(["angular2/core", "../services/task.service", "angular2/router"]
             function (task_service_1_1) {
                 task_service_1 = task_service_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
+            function (router_deprecated_1_1) {
+                router_deprecated_1 = router_deprecated_1_1;
             }],
         execute: function() {
             TaskListComponent = (function () {
@@ -57,7 +57,7 @@ System.register(["angular2/core", "../services/task.service", "angular2/router"]
                         selector: 'task-list',
                         templateUrl: './app/todo/components/task-list.html',
                         styleUrls: ['./app/todo/components/task-list.css'],
-                        directives: [router_1.ROUTER_DIRECTIVES]
+                        directives: [router_deprecated_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [task_service_1.TaskService])
                 ], TaskListComponent);

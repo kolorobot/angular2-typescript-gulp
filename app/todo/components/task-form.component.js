@@ -1,4 +1,4 @@
-System.register(["angular2/core", "../services/task.service", "../models/task", "angular2/router"], function(exports_1, context_1) {
+System.register(["@angular/core", "../services/task.service", "../models/task", "@angular/router-deprecated"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(["angular2/core", "../services/task.service", "../models/task", 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, task_service_1, task_1, router_1;
+    var core_1, task_service_1, task_1, router_deprecated_1;
     var TaskFormComponent;
     return {
         setters:[
@@ -23,8 +23,8 @@ System.register(["angular2/core", "../services/task.service", "../models/task", 
             function (task_1_1) {
                 task_1 = task_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
+            function (router_deprecated_1_1) {
+                router_deprecated_1 = router_deprecated_1_1;
             }],
         execute: function() {
             TaskFormComponent = (function () {
@@ -65,7 +65,7 @@ System.register(["angular2/core", "../services/task.service", "../models/task", 
                         selector: 'task-form',
                         templateUrl: './app/todo/components/task-form.html'
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, router_1.RouteParams, task_service_1.TaskService])
+                    __metadata('design:paramtypes', [router_deprecated_1.Router, router_deprecated_1.RouteParams, task_service_1.TaskService])
                 ], TaskFormComponent);
                 return TaskFormComponent;
             }());
