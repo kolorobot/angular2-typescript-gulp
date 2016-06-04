@@ -1,6 +1,6 @@
 <h1>Todo tasks ({{todoCount}})</h1>
 <ul>
-    <li *ngFor="#task of tasks" [class.selected]="task == selectedTask">
+    <li *ngFor="let task of tasks" [class.selected]="task == selectedTask">
         <a href="javascript:void(0)" (click)="select(task)">
             {{task.name}}
             <span [ngSwitch]="task.done">
