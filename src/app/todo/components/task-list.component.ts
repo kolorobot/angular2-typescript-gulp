@@ -8,7 +8,6 @@ import {TaskComponent} from "./task.component";
     selector: 'task-list',
     templateUrl: './app/todo/components/task-list.html',
     styleUrls: ['./app/todo/components/task-list.css'],
-    directives: [TaskComponent],
     providers: [TaskService]
 })
 export class TaskListComponent implements OnInit {
