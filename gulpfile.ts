@@ -31,7 +31,7 @@ gulp.task("compile", ["tslint"], () => {
         .pipe(sourcemaps.init())
         .pipe(tsc(tsProject));
     return tsResult.js
-        .pipe(sourcemaps.write("."))
+        .pipe(sourcemaps.write(".", {sourceRoot: '/src'}))
         .pipe(gulp.dest("build"));
 });
 
