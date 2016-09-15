@@ -3,17 +3,31 @@ Angular2 with TypeScript and Gulp
 
 A basic Angular2 application with Gulp as build system.
 
-Prerequisites
--------------
+#### 1. Prerequisites
 
-- nodejs
-- gulp and gulp-cli
+*nodejs* must be installed on your system and the below global node packages must be installed:
+
+- gulp
+
+> npm i -g gulp
+
+- gulp-cli
+
+> npm i -g gulp-cli
+
 - typings
-- typescrit
+
+> npm i -g typings@1.3.3
+
+- typescript
+
+> npm i -g typescript@2.0.2
+
 - ts-node
 
-Running
--------
+> npm i -g ts-node@1.3.0
+
+#### 2. Cloning the repository
 
 Clone the repository:
 
@@ -23,23 +37,31 @@ Navigate to `angular2-typescript-gulp` directory:
 
 > cd angular2-typescript-gulp
 
-Install dependencies:
+#### 3. Installing dependencies
+
+Install dependencies by running the following command:
 
 > npm install
 
-`node_modules` and `typings` directories should be created during the install.
+`node_modules` and `typings` directories will be created during the install.
 
-Build the project:
+#### 4. Building the project
+
+Build the project by running the following command:
 
 > npm run clean & npm run build
 
-`build` directory should be created during the build
+`build` directory will be created during the build
+
+#### 5. Starting the application
+
+Start the application by running the following command:
 
 > npm start
 
-The application should be displayed in the browser.
+The application will be displayed in the browser.
 
 Resources
 ---------
 
-- A step-by-step tutorial - http://blog.codeleak.pl/2016/03/quickstart-angular2-with-typescript-and.html
+- [A step-by-step tutorial](http://blog.codeleak.pl/2016/03/quickstart-angular2-with-typescript-and.html)

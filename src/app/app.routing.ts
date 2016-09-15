@@ -1,6 +1,6 @@
-import {Routes, RouterModule, ExtraOptions} from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 import {TaskListComponent} from "./todo/components/task-list.component";
-import {AboutComponent} from "./about/components/about.components";
+import {AboutComponent} from "./about/components/about.component";
 import {ModuleWithProviders} from "@angular/core";
 
 const appRoutes: Routes = [
